@@ -1,0 +1,11 @@
+{
+ "mcpServers": {
+   "fhir-server": {
+     "command": "/path/to/python/mcp_env/bin/python",
+     "args": ["/path/to/python/fhir-mcp/fhir_mcp_server.py"],
+     "env": {
+       "FHIR_BASE_URL": "http://localhost:8001/fhir"
+     }
+   }
+ }
+}

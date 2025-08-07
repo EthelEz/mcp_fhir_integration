@@ -1,0 +1,1 @@
+GET http://localhost:8001/fhir/Encounter?_summary=data HTTP/1.1

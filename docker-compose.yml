@@ -1,0 +1,42 @@
+services:
+ fhir:
+   container_name: fhir_730
+   image: "hapiproject/hapi:v5.5.1"  # Publicly accessible image
+   ports:
+     - "8001:8080"  # Main FHIR server port
+   environment:
+     JAVA_OPTS: "-Xmx8g"
+     SPRING_DATASOURCE_URL: "jdbc:postgresql://fhir-db:5432/hapi_r4"
+     SPRING_DATASOURCE_USERNAME: "admin"
+     SPRING_DATASOURCE_PASSWORD: "admin"
+     SPRING_DATASOURCE_DRIVERCLASSNAME: "org.postgresql.Driver"
+     HAPI_FHIR_VERSION: "R4"
+     HAPI_FHIR_TERMINOLOGY_ENABLED: "true"  # Enable terminology service
+     HAPI_FHIR_SUBSCRIPTION_RESTHOOK_ENABLED: "true"
+     HAPI_FHIR_SUBSCRIPTION_WEBSOCKET_ENABLED: "true"
+     HAPI_FHIR_CLIENT_ID_STRATEGY: "ANY"
+   depends_on:
+   - fhir-db
+   networks:
+   - fhir-network
+ fhir-db:
+   container_name: fhir_db
+   image: "postgres:16"
+   restart: always
+   volumes:
+   - fhir-db-data:/var/lib/postgresql/data
+   environment:
+     POSTGRES_PASSWORD: "admin"
+     POSTGRES_USER: "admin"
+     POSTGRES_DB: "hapi_r4"
+   networks:
+     - fhir-network
+
+
+volumes:
+ fhir-db-data:
+
+
+networks:
+ fhir-network:
+   driver: bridge
