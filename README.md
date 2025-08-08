@@ -92,7 +92,7 @@ mcp_fhir_integration/
 └── README.md
 ```
 
-- `main.py` – Entry point for the integration demo (Python).
+- `fhir-mcp_server.py` – Entry point for the integration demo (Python).
 - `requirements.txt` – List of Python dependencies.
 - `Dockerfile`/`docker-compose.yml` – For containerized setup.
 - `post_data_fhir.http` / `get_data.http` - To load or read sample FHIR data.
