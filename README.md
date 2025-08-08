@@ -21,21 +21,24 @@ All code in this repository is written in **Python**.
 
 ## Getting Started
 
-1. **Clone the Repository**
+1. **Clone the Repositories and Install Requirements**
 
    ```bash
    git clone https://github.com/EthelEz/mcp_fhir_integration.git
    cd mcp_fhir_integration
+
+   run docker compose up
    ```
 
-2. **Install Requirements**
+   Also 
 
-   Create a virtual environment and install dependencies (see `requirements.txt`):
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   ```bash 
+   git clone https://github.com/jcafazzo/fhir-mcp
+   cd fhir_mcp
    pip install -r requirements.txt
+   in line 794, replace https://hapi.fhir.org/baseR4 with your FHIR API (in my case, http://localhost:8001/fhir)
+   Add your token if you have or ignore it
+   run pyton fhir-mcp_server.py
    ```
 
 3. **Set Up Docker and PostgreSQL**
@@ -46,16 +49,19 @@ All code in this repository is written in **Python**.
 
    Copy `.env.example` to `.env` and fill in the required environment variables.
 
-5. **Run the Integration**
+5. **Install Claude Desktop**
 
-   Launch the integration process:
-
-   ```bash
-   python main.py
-   ```
+   Install from :
+  
+   - [Claude Desktop](https://www.anthropic.com/claude)
+   
 6. **Connect to Claude Desktop**
    
-     Use the JSON file in the folder for the connections
+     - Go to Claude Desktop Settings 
+     - Then Developers and Edit the JSON config
+     - Use the JSON file in the folder for the connections
+
+     
       ```bash
       claude_desktop_config.json
       ```
