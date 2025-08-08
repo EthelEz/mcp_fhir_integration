@@ -10,7 +10,7 @@ Special thanks to [jcafazzo](https://github.com/jcafazzo), whose project [fhir-m
 
 ## Prerequisites
 
-To reproduce or extend this demonstration, you will need the following installed on your system:
+To reproduce or extend this demonstration, you will need the following installed on system:
 
 - [Docker](https://www.docker.com/)
 - [PostgreSQL](https://www.postgresql.org/)
@@ -29,7 +29,7 @@ All code in this repository is written in **Python**.
 
    run docker compose up
 
-   Test that the server is working by going to the browser and paste your server URL. In my own,
+   Test that the server is working by going to the browser and paste server URL. In my own,
    http://localhost:8001/fhir/metadata
    ```
 
@@ -39,17 +39,21 @@ All code in this repository is written in **Python**.
    git clone https://github.com/jcafazzo/fhir-mcp
    cd fhir_mcp
    pip install -r requirements.txt
+   ```
 
-   In line 794 of fhir-mcp_server.py, replace https://hapi.fhir.org/baseR4 with your FHIR API (in my case, http://localhost:8001/fhir)
+   In line 794 of **fhir-mcp_server.py**, replace **https://hapi.fhir.org/baseR4** with FHIR API (in my case, **http://localhost:8001/fhir**)
 
-   Add your token if you have or ignore it
+   Add token if you have or ignore it
 
-   run pyton fhir-mcp_server.py
+   In command line, run 
+   
+   ```bash
+   python fhir-mcp_server.py
    ```
 
 3. **Set Up Docker and PostgreSQL**
 
-   Ensure Docker is running. Use Docker Compose or your own scripts to spin up a FHIR server (e.g., HAPI FHIR or similar) and a PostgreSQL database.
+   Ensure Docker is running. Use Docker Compose or own scripts to spin up a FHIR server (e.g., HAPI FHIR or similar) and a PostgreSQL database.
 
 4. **Configure Environment**
 
