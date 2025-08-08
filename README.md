@@ -28,6 +28,9 @@ All code in this repository is written in **Python**.
    cd mcp_fhir_integration
 
    run docker compose up
+
+   Test that the server is working by going to the browser and paste your server URL. In my own,
+   http://localhost:8001/fhir/metadata
    ```
 
    Also 
@@ -36,8 +39,11 @@ All code in this repository is written in **Python**.
    git clone https://github.com/jcafazzo/fhir-mcp
    cd fhir_mcp
    pip install -r requirements.txt
-   in line 794, replace https://hapi.fhir.org/baseR4 with your FHIR API (in my case, http://localhost:8001/fhir)
+
+   In line 794 of fhir-mcp_server.py, replace https://hapi.fhir.org/baseR4 with your FHIR API (in my case, http://localhost:8001/fhir)
+
    Add your token if you have or ignore it
+
    run pyton fhir-mcp_server.py
    ```
 
@@ -61,7 +67,7 @@ All code in this repository is written in **Python**.
      - Then Developers and Edit the JSON config
      - Use the JSON file in the folder for the connections
 
-     
+
       ```bash
       claude_desktop_config.json
       ```
